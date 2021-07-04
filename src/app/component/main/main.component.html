@@ -1,0 +1,24 @@
+<div *ngIf="connection; else errorDiv">
+    <h4>Connected to the flask app</h4>
+    <hr>
+
+    <form (ngSubmit)="onSubmit()">
+        <div>
+            <label for="model">File :</label>
+            <input type="file" name="file" (change)="onFileChange($event)" accept="image/*"/>
+        </div>
+        <div>
+            <label for="model">Model :</label>
+            <input type="text" name="model" [(ngModel)]="model" id="model" placeholder="Model Name">
+        </div>
+
+        <input type="submit" value="Save Task"  class="btn btn-block ">
+
+    
+    
+    </form>
+
+</div>
+<ng-template #errorDiv>
+    <h4>Please run the flask app and reload the page</h4>
+</ng-template>

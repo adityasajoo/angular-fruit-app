@@ -1,0 +1,29 @@
+<div *ngIf="isLoading; else elseBlock">
+    <div class="container">
+        <div class="loader"></div>
+    </div>
+</div>
+<ng-template #elseBlock>
+
+    <div *ngIf="result.input_image">
+        <h3>Predicted !</h3>
+        <hr>
+        <h5>Input image</h5>
+        <img id="myImg" [src]="'data:image/jpg;base64,'+result.input_image | safeHtml" alt="error">
+    
+        <table border="border">
+            <tr>
+                <th>Fruit</th>
+                <th>Image</th>
+            </tr>
+            <tr  *ngFor="let fruit of result.predicted">
+                <td> {{fruit.fruit}}</td>
+                <td><img  [src]="'data:image/jpg;base64,'+fruit.image | safeHtml" alt="error"> </td>
+            </tr>
+    
+        </table>
+    
+    </div>
+ 
+
+</ng-template>
