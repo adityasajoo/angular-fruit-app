@@ -5,8 +5,7 @@ import { ResultComponent } from './component/result/result.component';
 
 const routes: Routes = [
   {path:'',component:MainComponent},
-  {path:'result', component:ResultComponent}
-
+  {path:'result', component:ResultComponent},
 ];
 
 @NgModule({

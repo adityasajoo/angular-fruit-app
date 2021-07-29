@@ -9,6 +9,9 @@ import { NavComponent } from './component/nav/nav.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { HomeComponent } from './component/home/home.component';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -17,14 +20,16 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
     MainComponent,
     ResultComponent,
     NavComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
